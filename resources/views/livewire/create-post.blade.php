@@ -119,7 +119,7 @@
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                     <div class="overflow-hidden">
-                        <table class="min-w-full text-center text-sm font-light">
+                        <table class="min-w-full text-center text-sm font-dark">
                             <thead class="border-b font-medium dark:border-neutral-500">
                                 <tr>
                                     <th scope="col" class="px-6 py-4">#</th>
@@ -139,21 +139,21 @@
                                                 data-te-ripple-init data-te-ripple-color="light">
                                                 Edit
                                             </button>
-                                            {{-- <button
-                                                wire:click="delete({{ $post->id }})"wire:confirm="Are you sure you want to delete this post?"
+                                            <button
+                                                wire:click.prevent="delete({{ $post->id }})"wire:confirm="Are you sure you want to delete this post?"
                                                 class="inline-block rounded bg-red-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                                                 data-te-ripple-init data-te-ripple-color="light">
                                                 Delete
-                                            </button> --}}
+                                            </button>
 
 
-                                            @if ($confirming === $post->id)
-                                                <button wire:click="delete"
+                                            {{-- @if ($confirming === $post->id)
+                                                <button wire:click.prevent="delete"type="submit"
                                                     class="bg-red-800 text-white w-32 px-4 py-1 hover:bg-red-600 rounded border">Sure?</button>
-                                            @else
-                                                <button wire:click="confirmDelete({{ $post->id }})"
-                                                    class="bg-gray-600 text-white w-32 px-4 py-1 hover:bg-red-600 rounded border">Delete</button>
-                                            @endif
+                                            @else --}}
+                                            <button wire:click.prevent="delete({{ $post->id }})"
+                                                class="bg-gray-600 text-white w-32 px-4 py-1 hover:bg-red-600 rounded border">Delete</button>
+                                            {{-- @endif --}}
 
                                         </td>
                                     </tr>

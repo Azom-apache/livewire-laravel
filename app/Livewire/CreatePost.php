@@ -35,16 +35,15 @@ class CreatePost extends Component
       
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $post = Post::find($this->delete_id);
+        $post = Post::find($id);
 
         if ($post) {
             $post->delete();
             session()->flash('success', 'Post deleted successfully.');
         }
 
-        $this->confirming = null;
     }
     public function render()
     {
